@@ -37,6 +37,23 @@ def get_jra55_cice_var():
     
     return cice_var
 
+def get_command_line_args():
+    '''
+    argument parser for command line arguments
+    '''
+
+    dstr = "Interpolate JRA55 data"
+    parser = argparse.ArgumentParser(description=dstr)
+
+    # add arguments
+    parser.add_argument("YEAR",  type=str, help="Specify the year you want to interpolate.")
+
+
+    # get the arguments
+    args = parser.parse_args()
+
+    # return values
+    return args.YEAR
 
 ####################################################
 
@@ -54,7 +71,10 @@ if __name__ == "__main__":
     # get the arguments
     #args = parser.parse_args()
 
-    year = "2007"
+    #year = "2006"
+    # get year from command line
+    year = get_command_line_args()
+    
     jra55_vars = {"prsn", "rsds", "rlds", "tas", "uas", "vas", "huss"}
 
 
@@ -190,7 +210,7 @@ if __name__ == "__main__":
                           {'long_name':"specific humidity",
                            'units'    :"kg/kg",
                            '_FillValue':-2e8}),
-              "ttlpcp" : (['time','nj','ni'],huss_out,
+              "ttlpcp" : (['time','nj','ni'],prsn_out,
                           {'long_name':"Mean total precipitation rate",
                            'units'    :"kg m**-2 s**-1",
                            '_FillValue':-2e8}),
