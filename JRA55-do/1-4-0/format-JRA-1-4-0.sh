@@ -13,7 +13,7 @@
 #PBS -l walltime=10:00:00
 #PBS -l wd
 #PBS -M noah.day@adelaide.edu.au
-#PBS -l storage=gdata/hh5+gdata/ia40+gdata/qv56+gdata/ik11
+#PBS -l storage=gdata/hh5+gdata/dy43+gdata/qv56+gdata/ik11+gdata/ia40
 
 
 module load esmf/8.0.1

@@ -3,14 +3,14 @@
 #       1. Read in the filenames of all the raw CAWCR files
 #	2. Run interpolating python script
 #PBS -N format-cawcr
-#PBS -P dy43
+#PBS -P ia40
 #PBS -q normal
 #PBS -l ncpus=48
 #PBS -l mem=190GB
 #PBS -l walltime=12:00:00
 #PBS -m abe
 #PBS -M noah.day@adelaide.edu.au
-#PBS -l storage=gdata/hh5+gdata/dy43
+#PBS -l storage=gdata/hh5+gdata/ia40
 #PBS -l jobfs=10GB
 #PBS -l wd
 
